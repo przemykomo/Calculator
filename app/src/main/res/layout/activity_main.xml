@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/zerob"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="0"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pointb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="."
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/zerob"
+        app:layout_constraintStart_toEndOf="@+id/zerob" />
+
+    <Button
+        android:id="@+id/equalsb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="="
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pointb"
+        app:layout_constraintStart_toEndOf="@+id/pointb" />
+
+    <Button
+        android:id="@+id/oneb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="4dp"
+        android:text="1"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/zerob"
+        app:layout_constraintStart_toStartOf="@+id/zerob" />
+
+    <Button
+        android:id="@+id/twob"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="2"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/oneb"
+        app:layout_constraintStart_toEndOf="@+id/oneb" />
+
+    <Button
+        android:id="@+id/threeb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="3"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/twob"
+        app:layout_constraintStart_toEndOf="@+id/twob" />
+
+    <Button
+        android:id="@+id/fourb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="4dp"
+        android:text="4"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/oneb"
+        app:layout_constraintStart_toStartOf="@+id/oneb" />
+
+    <Button
+        android:id="@+id/fiveb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="5"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fourb"
+        app:layout_constraintStart_toEndOf="@+id/fourb" />
+
+    <Button
+        android:id="@+id/sixb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="6"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fiveb"
+        app:layout_constraintStart_toEndOf="@+id/fiveb" />
+
+    <Button
+        android:id="@+id/sevenb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="4dp"
+        android:text="7"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/fourb"
+        app:layout_constraintStart_toStartOf="@+id/fourb" />
+
+    <Button
+        android:id="@+id/eightb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="8"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sevenb"
+        app:layout_constraintStart_toEndOf="@+id/sevenb" />
+
+    <Button
+        android:id="@+id/nineb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="9"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/eightb"
+        app:layout_constraintStart_toEndOf="@+id/eightb" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="75dp"
+        android:layout_height="312dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/equalsb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/threeb">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="÷"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/asterix"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="-"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="+"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="√"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="^"
+                android:textSize="36sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="4dp"
+        android:text="C"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="@+id/scrollView2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="right|bottom"
+        android:text="1234567890"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/sevenb"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/sevenb">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/pi"
+                android:textAllCaps="false"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="e"
+                android:textAllCaps="false"
+                android:textSize="36sp"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:text="i"
+                android:textAllCaps="false"
+                android:textSize="36sp"
+                android:typeface="normal" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="asterix">*</string>
+    <string name="pi">π</string>
+</resources>
