@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (!formula.endsWith(".")) {
             bigTextView.append(".");
         }
-        //TODO: Fix two points in one number - 12.34.5
+        //TODO: Fix two points in one number - 12.34.56
     }
 
     public void equalsbclick(View view) {
