@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/smallTextView"
+        android:id="@+id/smallFormulaTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="right|bottom"
@@ -21,10 +21,22 @@
         android:id="@+id/bigTextView"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
         android:gravity="right|bottom"
         android:text=""
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/smallResultTextView"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/smallResultTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="right|bottom"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
@@ -196,6 +208,7 @@
                 android:layout_height="75dp"
                 android:layout_marginBottom="4dp"
                 android:text="÷"
+                android:onClick="dividebclick"
                 android:textSize="36sp" />
 
             <Button
@@ -204,6 +217,7 @@
                 android:layout_height="75dp"
                 android:layout_marginBottom="4dp"
                 android:text="@string/asterix"
+                android:onClick="multiplybclick"
                 android:textSize="36sp" />
 
             <Button
@@ -212,6 +226,7 @@
                 android:layout_height="75dp"
                 android:layout_marginBottom="4dp"
                 android:text="-"
+                android:onClick="subtractbclick"
                 android:textSize="36sp" />
 
             <Button
@@ -220,6 +235,7 @@
                 android:layout_height="75dp"
                 android:layout_marginBottom="4dp"
                 android:text="+"
+                android:onClick="addbclick"
                 android:textSize="36sp" />
 
             <Button
@@ -228,20 +244,40 @@
                 android:layout_height="75dp"
                 android:layout_marginBottom="4dp"
                 android:text="√"
+                android:onClick="sqrtbclick"
                 android:textSize="36sp" />
 
             <Button
                 android:id="@+id/powerb"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
                 android:text="^"
+                android:onClick="powerbclick"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/leftbracketb"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="4dp"
+                android:text="("
+                android:onClick="leftbracketbclick"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/rightbracketb"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text=")"
+                android:onClick="rightbracketbclick"
                 android:textSize="36sp" />
         </LinearLayout>
     </ScrollView>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="241dp"
+        android:layout_width="159dp"
         android:layout_height="75dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/sevenb"
@@ -327,5 +363,17 @@
                 android:textSize="36sp" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/deleteb"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:onClick="deletebclick"
+        android:text="←"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintStart_toEndOf="@+id/horizontalScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
