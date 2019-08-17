@@ -295,6 +295,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="@string/pi"
+                android:onClick="pibclick"
                 android:textAllCaps="false"
                 android:textSize="36sp" />
 
@@ -305,6 +306,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="e"
+                android:onClick="eulerbclick"
                 android:textAllCaps="false"
                 android:textSize="36sp"
                 android:typeface="normal" />
@@ -316,6 +318,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:text="i"
+                android:onClick="imaginarybclick"
                 android:textAllCaps="false"
                 android:textSize="36sp"
                 android:typeface="normal" />
@@ -326,6 +329,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:text="φ"
+                android:onClick="goldratiobclick"
                 android:textAllCaps="false"
                 android:textSize="36sp"
                 android:typeface="normal" />

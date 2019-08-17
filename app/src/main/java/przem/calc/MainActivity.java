@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         smallResultTextView = findViewById(R.id.smallResultTextView);
     }
 
+    public void equalsbclick(View view) {
+
+    }
+
     //<editor-fold> 1-9 buttons
 
     public void zerobclick(View view) {
@@ -115,10 +119,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void equalsbclick(View view) {
-
-    }
-
     public void deletebclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("")) {
@@ -137,12 +137,13 @@ public class MainActivity extends AppCompatActivity {
         bigTextView.setText("");
     }
 
+    //<editor-fold> math operations
 
     public void dividebclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
-                && !formula.endsWith("√")){
+                && !formula.endsWith("√") && !formula.endsWith("(") && !formula.endsWith(".")){
             bigTextView.append("/");
         }
     }
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
-                && !formula.endsWith("√")){
+                && !formula.endsWith("√") && !formula.endsWith(".")){
             bigTextView.append("*");
         }
     }
@@ -159,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
     public void subtractbclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.endsWith("+") && !formula.endsWith("-")
-                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")){
+                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
+                && !formula.endsWith(".")){
             bigTextView.append("-");
         }
     }
@@ -168,29 +170,74 @@ public class MainActivity extends AppCompatActivity {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
-                && !formula.endsWith("√")){
+                && !formula.endsWith("√") && !formula.endsWith("(") && !formula.endsWith(".")){
             bigTextView.append("+");
         }
     }
 
     public void sqrtbclick(View view) {
-        bigTextView.append("√");
+        String formula = bigTextView.getText().toString();
+        if (!formula.endsWith(".")) {
+            bigTextView.append("√");
+        }
     }
 
     public void powerbclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
-                && !formula.endsWith("√")){
+                && !formula.endsWith("√") && !formula.endsWith(".")){
             bigTextView.append("^");
         }
     }
 
+    //</editor-fold>
+
+    //<editor-fold> brackets
+
     public void leftbracketbclick(View view) {
-        bigTextView.append("(");
+        if (!bigTextView.getText().toString().endsWith(".")) {
+            bigTextView.append("(");
+        }
     }
 
     public void rightbracketbclick(View view) {
-        bigTextView.append(")");
+        String formula = bigTextView.getText().toString();
+        int leftbrackets = formula.length() - formula.replaceAll("\\(", "").length();
+        int rightBrackets = formula.length() - formula.replaceAll("\\)", "").length();
+
+        if (leftbrackets > rightBrackets && !formula.endsWith(".")) {
+            bigTextView.append(")");
+        }
     }
+
+    //</editor-fold>
+
+    //<editor-fold> constants
+
+    public void pibclick(View view) {
+        if (!bigTextView.getText().toString().endsWith(".")) {
+            bigTextView.append("π");
+        }
+    }
+
+    public void eulerbclick(View view) {
+        if (!bigTextView.getText().toString().endsWith(".")) {
+            bigTextView.append("e");
+        }
+    }
+
+    public void imaginarybclick(View view) {
+        if (!bigTextView.getText().toString().endsWith(".")) {
+            bigTextView.append("i");
+        }
+    }
+
+    public void goldratiobclick(View view) {
+        if (!bigTextView.getText().toString().endsWith(".")) {
+            bigTextView.append("φ");
+        }
+    }
+
+    //</editor-fold>
 }
