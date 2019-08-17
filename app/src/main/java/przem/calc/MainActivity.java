@@ -105,16 +105,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void pointbclick(View view) {
         String formula = bigTextView.getText().toString();
-        if (formula.equals("")) {
+        String[] numbers = formula.split("[+\\-*/()√^]");
+        if (formula.equals("") || formula.endsWith("+") || formula.endsWith("-")
+                || formula.endsWith("*") || formula.endsWith("/") || formula.endsWith("^")
+                || formula.endsWith("√") || formula.endsWith("(") || formula.endsWith(")")) {
             bigTextView.append("0.");
-        } else if (formula.endsWith("+") || formula.endsWith("-")
-                || formula.endsWith("*") || formula.endsWith("/") || formula.endsWith("^")) {
-
-            bigTextView.append("0.");
-        } else if (!formula.endsWith(".")) {
+        } else if (!numbers[numbers.length - 1].contains(".")) {
             bigTextView.append(".");
         }
-        //TODO: Fix two points in one number - 12.34.56
     }
 
     public void equalsbclick(View view) {
@@ -143,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
     public void dividebclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
-                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")){
+                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
+                && !formula.endsWith("√")){
             bigTextView.append("/");
         }
     }
@@ -151,7 +150,8 @@ public class MainActivity extends AppCompatActivity {
     public void multiplybclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
-                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")){
+                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
+                && !formula.endsWith("√")){
             bigTextView.append("*");
         }
     }
@@ -167,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
     public void addbclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
-                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")){
+                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
+                && !formula.endsWith("√")){
             bigTextView.append("+");
         }
     }
@@ -179,7 +180,8 @@ public class MainActivity extends AppCompatActivity {
     public void powerbclick(View view) {
         String formula = bigTextView.getText().toString();
         if (!formula.equals("") && !formula.endsWith("+") && !formula.endsWith("-")
-                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")){
+                && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
+                && !formula.endsWith("√")){
             bigTextView.append("^");
         }
     }
