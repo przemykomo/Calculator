@@ -37,6 +37,7 @@
         android:layout_marginBottom="8dp"
         android:gravity="right|bottom"
         android:text=""
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"

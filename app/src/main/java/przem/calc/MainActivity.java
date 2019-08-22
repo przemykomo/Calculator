@@ -21,8 +21,12 @@ public class MainActivity extends AppCompatActivity {
         smallResultTextView = findViewById(R.id.smallResultTextView);
     }
 
-    public void equalsbclick(View view) {
+    private void calculateToTextView() {
+        smallResultTextView.setText(Math.eval(bigTextView.getText().toString()));
+    }
 
+    public void equalsbclick(View view) {
+        calculateToTextView();
     }
 
     //<editor-fold> 1-9 buttons
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void zerobclick(View view) {
         if (!bigTextView.getText().toString().equals("0")) {
             bigTextView.append("0");
+            calculateToTextView();
         }
     }
 
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("1");
         }
+        calculateToTextView();
     }
 
     public void twobclick(View view) {
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("2");
         }
+        calculateToTextView();
     }
 
     public void threebclick(View view) {
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("3");
         }
+        calculateToTextView();
     }
 
     public void fourbclick(View view) {
@@ -63,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("4");
         }
+        calculateToTextView();
     }
 
     public void fivebclick(View view) {
@@ -71,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("5");
         }
+        calculateToTextView();
     }
 
     public void sixbclick(View view) {
@@ -79,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("6");
         }
+        calculateToTextView();
     }
 
     public void sevenbclick(View view) {
@@ -87,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("7");
         }
+        calculateToTextView();
     }
 
     public void eightbclick(View view) {
@@ -95,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("8");
         }
+        calculateToTextView();
     }
 
     public void ninebclick(View view) {
@@ -103,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             bigTextView.append("9");
         }
+        calculateToTextView();
     }
 
     //</editor-fold>
@@ -117,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (!numbers[numbers.length - 1].contains(".")) {
             bigTextView.append(".");
         }
+        calculateToTextView();
     }
 
     public void deletebclick(View view) {
@@ -125,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             formula = formula.substring(0, formula.length() - 1);
             bigTextView.setText(formula);
         }
+        calculateToTextView();
     }
 
     public void clearbclick(View view) {
@@ -135,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
     public void resetbclick(View view) {
         smallFormulaTextView.setText("");
         bigTextView.setText("");
+        smallResultTextView.setText("");
     }
 
     //<editor-fold> math operations
