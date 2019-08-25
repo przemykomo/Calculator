@@ -17,16 +17,15 @@
         app:layout_constraintStart_toStartOf="@+id/bigTextView"
         tools:ignore="RtlHardcoded" />
 
-    <TextView
+    <przem.calc.FontFitTextView
         android:id="@+id/bigTextView"
         android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:gravity="right|bottom"
+        android:layout_height="wrap_content"
+        android:gravity="right"
         android:text=""
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/smallResultTextView"
         app:layout_constraintEnd_toEndOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
         tools:ignore="RtlHardcoded" />
 
@@ -360,10 +359,10 @@
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/resetb"
+                android:id="@+id/clearentryb"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:onClick="resetbclick"
+                android:onClick="clearentrybclick"
                 android:text="CE"
                 android:textSize="36sp" />
         </LinearLayout>

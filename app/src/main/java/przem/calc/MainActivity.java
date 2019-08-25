@@ -3,13 +3,15 @@ package przem.calc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView smallFormulaTextView, bigTextView, smallResultTextView;
+    private TextView smallFormulaTextView, smallResultTextView;
+    private FontFitTextView bigTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +21,23 @@ public class MainActivity extends AppCompatActivity {
         smallFormulaTextView = findViewById(R.id.smallFormulaTextView);
         bigTextView = findViewById(R.id.bigTextView);
         smallResultTextView = findViewById(R.id.smallResultTextView);
+
+        bigTextView.setSelected(true); // Make it scrollable
+    }
+
+    private String calculateFormulaTextView() {
+        return Math.eval(bigTextView.getText().toString());
     }
 
     private void calculateToTextView() {
-        smallResultTextView.setText(Math.eval(bigTextView.getText().toString()));
+        String result = calculateFormulaTextView();
+        smallResultTextView.setText(result);
     }
 
     public void equalsbclick(View view) {
-        calculateToTextView();
+        smallFormulaTextView.setText(bigTextView.getText());
+        bigTextView.setText(calculateFormulaTextView());
+        smallResultTextView.setText("");
     }
 
     //<editor-fold> 1-9 buttons
@@ -144,14 +155,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearbclick(View view) {
+        smallFormulaTextView.setText("");
         bigTextView.setText("");
         smallResultTextView.setText("");
     }
 
-    public void resetbclick(View view) {
-        smallFormulaTextView.setText("");
-        bigTextView.setText("");
-        smallResultTextView.setText("");
+    public void clearentrybclick(View view) {
+        // Clear only last typed entry
     }
 
     //<editor-fold> math operations
@@ -162,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
                 && !formula.endsWith("√") && !formula.endsWith("(") && !formula.endsWith(".")){
             bigTextView.append("/");
+            calculateToTextView();
         }
     }
 
@@ -171,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
                 && !formula.endsWith("√") && !formula.endsWith(".")){
             bigTextView.append("*");
+            calculateToTextView();
         }
     }
 
@@ -180,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
                 && !formula.endsWith(".")){
             bigTextView.append("-");
+            calculateToTextView();
         }
     }
 
@@ -189,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
                 && !formula.endsWith("√") && !formula.endsWith("(") && !formula.endsWith(".")){
             bigTextView.append("+");
+            calculateToTextView();
         }
     }
 
@@ -196,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
         String formula = bigTextView.getText().toString();
         if (!formula.endsWith(".")) {
             bigTextView.append("√");
+            calculateToTextView();
         }
     }
 
@@ -205,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
                 && !formula.endsWith("*") && !formula.endsWith("/") && !formula.endsWith("^")
                 && !formula.endsWith("√") && !formula.endsWith(".")){
             bigTextView.append("^");
+            calculateToTextView();
         }
     }
 
@@ -214,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void leftbracketbclick(View view) {
         if (!bigTextView.getText().toString().endsWith(".")) {
-            bigTextView.append("(");
+            bigTextView.append("("); // Not calculating because bracket must be closed
         }
     }
 
@@ -225,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (leftbrackets > rightBrackets && !formula.endsWith(".")) {
             bigTextView.append(")");
+            calculateToTextView();
         }
     }
 
@@ -235,24 +252,28 @@ public class MainActivity extends AppCompatActivity {
     public void pibclick(View view) {
         if (!bigTextView.getText().toString().endsWith(".")) {
             bigTextView.append("π");
+            calculateToTextView();
         }
     }
 
     public void eulerbclick(View view) {
         if (!bigTextView.getText().toString().endsWith(".")) {
             bigTextView.append("e");
+            calculateToTextView();
         }
     }
 
     public void imaginarybclick(View view) {
         if (!bigTextView.getText().toString().endsWith(".")) {
             bigTextView.append("i");
+            calculateToTextView();
         }
     }
 
     public void goldratiobclick(View view) {
         if (!bigTextView.getText().toString().endsWith(".")) {
             bigTextView.append("φ");
+            calculateToTextView();
         }
     }
 

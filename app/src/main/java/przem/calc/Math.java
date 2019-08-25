@@ -10,24 +10,20 @@ import org.javia.arity.Util;
 public class Math {
     static String eval(String expr) {
         Symbols symbols = new Symbols();
-        String result = "Syntax error!";
+        String result = "Syntax error";
+        expr = expr.replaceAll("φ", "((1+√5)/2)"); // Arity doesn't support phi
         try {
-            double actual, actual2 = 0;
-            Complex complex, complex2 = new Complex();
+            Complex complex;
 
             FunctionAndName fan = symbols.compileWithName(expr);
             Function f = fan.function;
             symbols.define(fan);
-            if (f.arity() == 0) {
-                actual = f.eval();
-                complex = f.evalComplex();
-                result = Util.doubleToString(actual, 1);
 
-                if (!Symbols.isDefinition(expr)) {
-                    actual2 = symbols.eval(expr);
-                    complex2 = symbols.evalComplex(expr);
-                }
-            }
+            // arity (number of math function arguments) will always be 0 in eval
+
+            complex = f.evalComplex();
+            result = Util.complexToString(complex, 20, 1);
+
         } catch (SyntaxException e) {
             e.printStackTrace(); //TODO: Print error instead of last result
         }
