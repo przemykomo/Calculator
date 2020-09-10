@@ -1,4 +1,4 @@
-package przem.calc;
+package xyz.przemyk.calculator;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -59,11 +59,7 @@ public class FontFitTextView extends AppCompatTextView {
         Log.d("przemykbug", "refitText: nextSize: " + nextSize);
         Log.d("przemykbug", "refitText: maxSize: " + maxSize);
 
-        if (nextSize < maxSize) {
-            this.setTextSize(COMPLEX_UNIT_PX, nextSize);
-        } else {
-            this.setTextSize(COMPLEX_UNIT_PX, maxSize);
-        }
+        this.setTextSize(COMPLEX_UNIT_PX, java.lang.Math.min(nextSize, maxSize));
     }
 
     @Override

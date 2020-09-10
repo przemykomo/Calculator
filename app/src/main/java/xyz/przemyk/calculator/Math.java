@@ -1,4 +1,4 @@
-package przem.calc;
+package xyz.przemyk.calculator;
 
 import org.javia.arity.Complex;
 import org.javia.arity.Function;

@@ -1,4 +1,4 @@
-package przem.calc;
+package przem.calculator;
 
 import android.content.Context;
 

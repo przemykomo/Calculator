@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="xyz.przemyk.calculator.MainActivity">
 
     <TextView
         android:id="@+id/smallFormulaTextView"
@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:gravity="right|bottom"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/bigTextView"
-        app:layout_constraintEnd_toEndOf="@+id/bigTextView"
-        app:layout_constraintStart_toStartOf="@+id/bigTextView"
+        app:layout_constraintBottom_toTopOf="@+id/largeTextView"
+        app:layout_constraintEnd_toEndOf="@+id/largeTextView"
+        app:layout_constraintStart_toStartOf="@+id/largeTextView"
         tools:ignore="RtlHardcoded" />
 
-    <przem.calc.FontFitTextView
-        android:id="@+id/bigTextView"
+    <xyz.przemyk.calculator.FontFitTextView
+        android:id="@+id/largeTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="right"
@@ -43,237 +43,261 @@
         tools:ignore="RtlHardcoded" />
 
     <Button
-        android:id="@+id/zerob"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="24dp"
-        android:text="0"
-        android:onClick="zerobclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:id="@+id/zerob"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="24dp"
+            android:text="0"
+            android:onClick="zerobclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/pointb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="."
-        android:onClick="pointbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/zerob"
-        app:layout_constraintStart_toEndOf="@+id/zerob" />
+            android:id="@+id/pointb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="."
+            android:onClick="pointbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/zerob"
+            app:layout_constraintStart_toEndOf="@+id/zerob" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/equalsb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="="
-        android:onClick="equalsbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pointb"
-        app:layout_constraintStart_toEndOf="@+id/pointb" />
+            android:id="@+id/equalsb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="="
+            android:onClick="equalsbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/pointb"
+            app:layout_constraintStart_toEndOf="@+id/pointb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/oneb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="4dp"
-        android:text="1"
-        android:onClick="onebclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/zerob"
-        app:layout_constraintStart_toStartOf="@+id/zerob" />
+            android:id="@+id/oneb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="4dp"
+            android:text="1"
+            android:onClick="onebclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/zerob"
+            app:layout_constraintStart_toStartOf="@+id/zerob" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/twob"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="2"
-        android:onClick="twobclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/oneb"
-        app:layout_constraintStart_toEndOf="@+id/oneb" />
+            android:id="@+id/twob"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="2"
+            android:onClick="twobclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/oneb"
+            app:layout_constraintStart_toEndOf="@+id/oneb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/threeb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="3"
-        android:onClick="threebclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/twob"
-        app:layout_constraintStart_toEndOf="@+id/twob" />
+            android:id="@+id/threeb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="3"
+            android:onClick="threebclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/twob"
+            app:layout_constraintStart_toEndOf="@+id/twob" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/fourb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="4dp"
-        android:text="4"
-        android:onClick="fourbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/oneb"
-        app:layout_constraintStart_toStartOf="@+id/oneb" />
+            android:id="@+id/fourb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="4dp"
+            android:text="4"
+            android:onClick="fourbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/oneb"
+            app:layout_constraintStart_toStartOf="@+id/oneb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/fiveb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="5"
-        android:onClick="fivebclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fourb"
-        app:layout_constraintStart_toEndOf="@+id/fourb" />
+            android:id="@+id/fiveb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="5"
+            android:onClick="fivebclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fourb"
+            app:layout_constraintStart_toEndOf="@+id/fourb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/sixb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="6"
-        android:onClick="sixbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fiveb"
-        app:layout_constraintStart_toEndOf="@+id/fiveb" />
+            android:id="@+id/sixb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="6"
+            android:onClick="sixbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fiveb"
+            app:layout_constraintStart_toEndOf="@+id/fiveb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/sevenb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="4dp"
-        android:text="7"
-        android:onClick="sevenbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/fourb"
-        app:layout_constraintStart_toStartOf="@+id/fourb" />
+            android:id="@+id/sevenb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="4dp"
+            android:text="7"
+            android:onClick="sevenbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/fourb"
+            app:layout_constraintStart_toStartOf="@+id/fourb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/eightb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="8"
-        android:onClick="eightbclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/sevenb"
-        app:layout_constraintStart_toEndOf="@+id/sevenb" />
+            android:id="@+id/eightb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="8"
+            android:onClick="eightbclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sevenb"
+            app:layout_constraintStart_toEndOf="@+id/sevenb" tools:ignore="HardcodedText"/>
 
     <Button
-        android:id="@+id/nineb"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="9"
-        android:onClick="ninebclick"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/eightb"
-        app:layout_constraintStart_toEndOf="@+id/eightb" />
+            android:id="@+id/nineb"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="9"
+            android:onClick="ninebclick"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/eightb"
+            app:layout_constraintStart_toEndOf="@+id/eightb" tools:ignore="HardcodedText"/>
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="75dp"
-        android:layout_height="312dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/equalsb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/threeb">
+            <ScrollView
+                    android:id="@+id/scrollView2"
+                    android:layout_width="75dp"
+                    android:layout_height="312dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/equalsb"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/threeb">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-            <Button
-                android:id="@+id/divideb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="÷"
-                android:onClick="dividebclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/divideb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="÷"
+                            android:onClick="dividebclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/multiplyb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="@string/asterix"
-                android:onClick="multiplybclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/multiplyb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="@string/asterix"
+                            android:onClick="multiplybclick"
+                            android:textSize="36sp"/>
 
-            <Button
-                android:id="@+id/subtractb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="-"
-                android:onClick="subtractbclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/subtractb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="-"
+                            android:onClick="subtractbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/addb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="+"
-                android:onClick="addbclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/addb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="+"
+                            android:onClick="addbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/sqrtb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="√"
-                android:onClick="sqrtbclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/sqrtb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="√"
+                            android:onClick="sqrtbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/powerb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="^"
-                android:onClick="powerbclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/powerb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="^"
+                            android:onClick="powerbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/leftbracketb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:text="("
-                android:onClick="leftbracketbclick"
-                android:textSize="36sp" />
+                    <Button
+                            android:id="@+id/leftbracketb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="("
+                            android:onClick="leftbracketbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
 
-            <Button
-                android:id="@+id/rightbracketb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:text=")"
-                android:onClick="rightbracketbclick"
-                android:textSize="36sp" />
-        </LinearLayout>
-    </ScrollView>
+                    <Button
+                            android:id="@+id/rightbracketb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:text=")"
+                            android:onClick="rightbracketbclick"
+                            android:textSize="36sp" tools:ignore="HardcodedText"/>
+
+                    <Button
+                            android:id="@+id/sinb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:text="sin"
+                            android:onClick="sinbclick"
+                            android:textSize="24sp" tools:ignore="HardcodedText"/>
+
+                    <Button
+                            android:id="@+id/cosb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:text="cos"
+                            android:onClick="cosbclick"
+                            android:textSize="24sp" tools:ignore="HardcodedText"/>
+
+                    <Button
+                            android:id="@+id/tgb"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:text="tg"
+                            android:onClick="tgbclick"
+                            android:textSize="24sp" tools:ignore="HardcodedText"/>
+                </LinearLayout>
+            </ScrollView>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -337,34 +361,33 @@
     </HorizontalScrollView>
 
     <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintStart_toStartOf="@+id/scrollView2">
+            android:id="@+id/scrollView3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@+id/deleteb">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             <Button
-                android:id="@+id/clearb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="4dp"
-                android:onClick="clearbclick"
-                android:text="C"
-                android:textSize="36sp" />
+                    android:id="@+id/clearb"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginBottom="4dp"
+                    android:onClick="clearbclick"
+                    android:text="C"
+                    android:textSize="36sp"/>
 
             <Button
-                android:id="@+id/clearentryb"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:onClick="clearentrybclick"
-                android:text="CE"
-                android:textSize="36sp" />
+                    android:id="@+id/clearentryb"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:onClick="clearentrybclick"
+                    android:text="CE"
+                    android:textSize="36sp"/>
         </LinearLayout>
     </ScrollView>
 
